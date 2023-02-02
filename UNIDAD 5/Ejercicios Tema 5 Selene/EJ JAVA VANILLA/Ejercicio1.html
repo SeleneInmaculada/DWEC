@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Formulario de Alta</h1>
+
+        <!--EMPIECE DEL FORMULARIO-->
+        <form id="formulario" action="procesar.php">
+            <fieldset>
+                <legend>Introduzca los datos</legend>
+                <!--CAJITA-->
+
+                <div class="form-group">
+                    <label for="nombre">Nombre: *</label>
+                    <input type="text" name="nombre" id="nombre" autofocus>
+                    <p class="error-feedback"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Direccion: </label>
+                    <input type="text" name="direccion" id="direccion" autofocus>
+                    <p class="error-feedback"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Número de teléfono: *</label>
+                    <input type="number" name="telefono" id="telefono" autofocus>
+                    <p class="error-feedback"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwd">Contraseña: *</label>
+                    <input type="password" name="passwd" id="passwd">
+                    <p class="error-feedback"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="newpasswd">Repita la contraseña: *</label>
+                    <input type="password" name="newpasswd" id="newpasswd">
+                    <p class="error-feedback"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="numcuenta">Numero de cuenta: *</label>
+                    <input type="numcuenta" name="numcuenta" id="numcuenta">
+                    <p class="error-feedback"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaNac">Indica tu fecha de nacimiento:</label>
+                    <input type="date" name="fechaNac" id="fechaNac">
+                    <p class="error-feedback"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="condiciones"> • Acepto el uso de mis datos *</label>
+                    <input type="checkbox" name="condiciones" id="condiciones">
+                    <p class="error-feedback"></p>
+                </div>
+                <div class="form-group">
+                    <label for="privacidad"> • Acepto la política de privacidad *</label>
+                    <input type="checkbox" name="privacidad" id="privacidad">
+                    <p class="error-feedback"></p>
+                </div>
+                <div class="form-group">
+                    <label for="publicidad"> • Acepto recibir publicidad </label>
+                    <input type="checkbox" name="publicidad" id="publicidad">
+                    <p class="error-feedback"></p>
+                </div>
+
+
+                <h6>Los datos marcados con * son obligatorios</h6>
+            </fieldset>
+            <div class="form-group">
+                <button type="button" id="marcar" class="btn">Marcar todas las condiciones</button>
+                <button type="reset" class="btn">Borrar</button>
+                <button type="submit" id="btn-submit" class="btn">Enviar Formulario</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="validar.js">
+
+    </script>
+
+
+</body>
+
+</html>

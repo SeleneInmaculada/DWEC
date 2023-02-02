@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="03-estilo.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <form action="">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" autofocus required>
+            </div>
+            <div class="form-group">
+                <label for="passwd">Password:</label>
+                <input type="password" minlength="7" name="passwd" id="passwd">
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Ingresa edad:</label>
+                <input type="number" name="edad" id="edad" min="18" max="110" step="1">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="submit">Enviar</button>
+                <button type="reset">Restablecer</button>
+            </div>
+    </div>
+
+    </form>
+</body>
+
+</html>

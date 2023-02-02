@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="estilo.css">
+    <script src="formulario.js"></script>
+</head>
+
+
+
+<body>
+    <main>
+
+        <form action="" class="formulario" id="formulario">
+
+            <h1 class="formulario__titulo">Formulario</h1>
+
+            <!--STRONG PONE EN ROJO EL * , ABBR HACE LA LINEA BAJO EL *-->
+            <p class="small">Los campos obligatorios van seguidos de <strong><abbr title="obligatorio">*</abbr>
+                </strong></p>
+
+            <div class="formulario1" id="formulario1">
+                <!-- DIV DNI -->
+                <div class="formulario__grupo1" id="grupo__dni">
+                    <label for="dni" class="formulario__label">DNI/CIF <strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="dni" id="dni" placeholder="########L"
+                            onblur="comprobarDni(this.value)" required> 
+                            <!--THIS VALUE, LO QUE METAS PARA COMPROBAR-->
+                    </div>  <!--ONBLUR EN HTML, BLUR EN JS. THIS ES REQUERIDO EN LLAMADA-->
+                </div>
+
+
+                <!-- DIV NOMBRE -->
+                <div class="formulario__grupo1" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre <strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre"
+                            onblur="comprobarNombre(this.value)" required>
+                    </div>
+                </div>
+
+
+                <!-- DIV APELLIDO -->
+                <div class="formulario__grupo" id="grupo__apellido1">
+                    <label for="apellido1" class="formulario__label">Primer Apellido <strong><abbr
+                                title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="apellido1" id="apellido1"
+                            onblur="comprobarApellido1(this.value)" required>
+                    </div>
+                </div>
+               
+
+                <!-- DIV CUENTA -->
+                <div class="formulario__grupo" id="grupo__cuenta">
+                    <label for="cuenta" class="formulario__label">Numero de cuenta <strong><abbr
+                                title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="number" class="formulario__input" name="cuenta" id="cuenta" onblur="comprobarcuenta(this.value)" required>
+                    </div>
+                </div>
+
+            </div>
+            <div class="formulario2" id="formulario2">
+                
+                <!-- DIV CALLES  -->
+                <div class="formulario__grupo" id="grupo__tipo">
+                    <label for="tipo" class="formulario__label">Tipo via <strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <select class="formulario__input" id="tipo" name="tipo" required>
+                            <option value="calle">Calle</option>
+                            <option value="plaza">Plaza</option>
+                            <option value="avenida">Avenida</option>
+                            <option value="paseo">Paseo</option>
+                            <option value="travesia">Travesía</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <!-- DIV NOMBRE CALLES -->
+                <div class="formulario__grupo" id="grupo__via">
+                    <label for="via" class="formulario__label">Nombre via <strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="via" id="via"
+                            onblur="comprobarNombreVia(this.value)" required>
+                    </div>
+                </div><br>
+
+                 <!-- DIV EMAIL -->
+                 <div class="formulario__grupo" id="grupo__email">
+                    <label for="email" class="formulario__label">Email <strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="email" id="email"
+                            onblur="comprobarEmail(this.value)" required>
+                    </div>
+                </div>
+
+
+                <!-- DIV NUMERO CASA-->
+                <div class="formulario__grupo" id="grupo__num">
+                    <label for="num" class="formulario__label">Numero <strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="number" class="formulario__input" name="num" id="num" placeholder="##" required>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="formulario3" id="formulario3">
+                <!-- DIV POBLACION -->
+                <div class="formulario__grupo" id="grupo__poblacion">
+                    <label for="poblacion" class="formulario__label">Poblacion <strong><abbr
+                                title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="poblacion" id="poblacion"
+                            onblur="comprobarPoblacion(this.value)" required>
+                    </div>
+                </div>
+
+
+
+                <!-- DIV CODIGO POSTAL -->
+                <div class="formulario__grupo" id="grupo__cp">
+                    <label for="cp" class="formulario__label">CP<strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="number" class="formulario__input" name="cp" id="cp" placeholder="#####"
+                            onblur="comprobarCodigoPostal(this.value)">
+                    </div>
+                </div>
+
+                <!-- DIV TELEFONO -->
+                <div class="formulario__grupo" id="grupo__tlf">
+                    <label for="tlf" class="formulario__label">Telefono <strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="number" class="formulario__input" name="tlf" id="tlf" placeholder="#########"
+                            onblur="comprobarTelefono(this.value)" required>
+                    </div>
+                </div>
+
+                <!--RADIOBUTTON TARJETAS DE CREDITO-->
+                <div class="container">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h4 class="card-title">Validador de tarjeta de crédito</h4>
+
+                            <form action="" id="formulario">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="tipocard" id="visa"
+                                            value="VISA" checked>
+                                        VISA
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="tipocard" id="mastercard"
+                                            value="MASTERCARD">
+                                        Master Card
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="tipocard" id="naranja"
+                                            value="NARANJA">
+                                        Naranja
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="tipocard" id="cabal"
+                                            value="CABAL">
+                                        Cabal
+                                    </label>
+
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="tipocard" id="amex"
+                                            value="AMEX">
+                                        American Express
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numTarjeta">Número de tarjeta</label>
+                                    <input type="text" class="form-control" name="numTarjeta" id="numTarjeta"
+                                        aria-describedby="helpId" placeholder="Introduzca un número válido de tarjeta">
+                                    <div class="valid-feedback">Número válido de tarjeta.</div>
+                                    <div class="invalid-feedback">Número inválido de tarjeta.</div>
+                                </div>
+                                <button id="btn-validar" type="button" class="btn btn-primary">Validar</button>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!-- DIV CONTRASENA -->
+                <div class="formulario__grupo" id="grupo__contrasena">
+                    <label for="contrasena" class="formulario__label">Contraseña <strong><abbr title="obligatorio">*</abbr>
+                        </strong></label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="contrasena" id="contrasena" placeholder="#########"
+                            onblur="comprobarContrasena(this.value)" required>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </main>
+</body>
+
+<!-- Optional JavaScript -->
+
+<!--VALIDADOR DE LA TARJETA DE CREDITO-->
+<script>
+    window.addEventListener("load", e => {
+
+        const formulario = document.querySelector("#formulario");
+        const inputTarjeta = document.querySelector("#numTarjeta");
+        const btnValidar = document.querySelector("#btn-validar");
+
+
+
+        btnValidar.addEventListener("click", e => {
+            const valorTarjeta = inputTarjeta.value.trim();
+            const opt = document.querySelector("input[name='tipocard']:checked").value;
+
+            if (!fValidarTarjeta(valorTarjeta, opt)) {
+                inputTarjeta.setCustomValidity("Error en el número de tarjeta");
+                console.log("Error en la tarjeta tipo: " + opt);
+            } else {
+                inputTarjeta.setCustomValidity("");
+                console.log("Tarjeta válida tipo: " + opt)
+            }
+            formulario.classList.add("was-validated");
+
+        });
+
+        //también lo aplicamos al evento keyup
+        inputTarjeta.addEventListener("keyup", e => {
+            const valorTarjeta = inputTarjeta.value.trim();
+            const opt = document.querySelector("input[name='tipocard']:checked").value;
+
+            //si la tecla pulsada es intro prevenimos hacer el submit
+            if (e.keyCode === 13) {
+                e.preventDefault();
+            }
+
+
+
+            if (!fValidarTarjeta(valorTarjeta, opt)) {
+                inputTarjeta.setCustomValidity("Error en el número de tarjeta");
+                console.log("Error en la tarjeta tipo: " + opt);
+            } else {
+                inputTarjeta.setCustomValidity("");
+                console.log("Tarjeta válida tipo: " + opt)
+            }
+            formulario.classList.add("was-validated");
+
+
+
+
+
+        });
+
+
+        function fValidarTarjeta(codigo, opt) {
+            var msg = "Valor incorrecto";
+            VISA = /^4[0-9]{3}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}$/;
+            MASTERCARD = /^5[1-5][0-9]{2}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}$/;
+            AMEX = /^3[47][0-9-]{16}$/;
+            CABAL = /^(6042|6043|6044|6045|6046|5896){4}[0-9]{12}$/;
+            NARANJA = /^(589562|402917|402918|527571|527572|0377798|0377799)[0-9]*$/;
+
+
+            if (luhn(codigo)) {
+                if (opt == "VISA" && !codigo.match(VISA)) {
+                    console.log("formato incorrecto de VISA");
+                    return false;
+                }
+                if (opt == "MASTERCARD" && !codigo.match(MASTERCARD)) {
+                    console.log("formato incorrecto de MASTERCARD");
+                    return false;
+                }
+                if (opt == "NARANJA" && !codigo.match(NARANJA)) {
+                    console.log("formato incorrecto de NARANJA");
+                    return false
+                }
+                if (opt == "CABAL" && !codigo.match(CABAL)) {
+                    console.log("formato incorrecto de CABAL");
+                    return false;
+                }
+                if (opt == "AMEX" && !codigo.match(AMEX)) {
+                    console.log("formato incorrecto de AMEX");
+                    return false
+                }
+                return true
+            } else {
+                console.log("número incorrecto de tarjeta")
+                return false;
+            }
+        }
+
+        function luhn(value) {
+            // Accept only digits, dashes or spaces
+            if (/[^0-9-\s]+/.test(value)) return false;
+            // The Luhn Algorithm. It's so pretty.
+            let nCheck = 0,
+                bEven = false;
+            value = value.replace(/\D/g, "");
+            for (var n = value.length - 1; n >= 0; n--) {
+                var cDigit = value.charAt(n),
+                    nDigit = parseInt(cDigit, 10);
+                if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
+                nCheck += nDigit;
+                bEven = !bEven;
+            }
+            return (nCheck % 10) == 0;
+        }
+
+    });
+</script>
+
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+</body>
+
+</html>

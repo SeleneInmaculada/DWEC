@@ -1,0 +1,73 @@
+h1 {
+    color: rgb(53, 136, 237);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.contenedor {
+    font: 1em sans-serif;
+    max-width: 600px;
+    margin: 0px auto;
+
+}
+
+fieldset {
+    background-color: white;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+label {
+    color: rgb(53, 136, 237);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.form-group {
+    margin-top: 1em;
+}
+
+.form-group>input,
+.form-group>textarea,
+.form-group>select {
+    display: block;
+    width: 100%;
+}
+
+.form-group>input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+}
+
+p.error-feedback {
+    color: red;
+    font-size: small;
+    margin: 0;
+}
+
+.error>input {
+    border-color: red;
+}
+
+.btn {
+    font-size: medium;
+    width: auto;
+    height: 30px;
+    margin-right: 15px;
+    border-radius: 10px;
+    background-color: #d5efff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn:hover {
+    background: #2079b0;
+    background-image: -webkit-linear-gradient(top, #47b8fd, #ffffff);
+    background-image: -moz-linear-gradient(top, #47b8fd, #ffffff);
+    background-image: -ms-linear-gradient(top, #47b8fd, #ffffff);
+    background-image: -o-linear-gradient(top, #47b8fd, #ffffff);
+    background-image: linear-gradient(to bottom, #47b8fd, #ffffff);
+    text-decoration: none;
+}

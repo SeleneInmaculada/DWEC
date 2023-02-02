@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>TOUR EVENT ENGSTARS</h3>
+    <div class="contenedor">
+       <p>Total Points Target</p> <input type="number" id="puntosconseguir">
+       <p>Total Points you already have</p> <input type="number" id="puntosyaconseguidos">
+       <p>Average score of the three songs with 3bp</p> <input type="number" id="puntos3bp">
+       <p>Score of the fourth song with 10 bp</p> <input type="number" id="puntos10bp">
+        <p><input type="button" value="Tell Me" id="btnCalcular"></p>
+      
+        <div class="Resultrepetir"></div>
+        <div class="Resultbp"></div>
+        <div class="Resultdia"></div>
+    </div>
+
+
+    <script>
+        const vpuntosconseguir = document.getElementById("puntosconseguir");
+        const vpuntosyaconseguidos = document.getElementById("puntosyaconseguidos");
+        const vpuntos3bp = document.getElementById("puntos3bp");
+        const vpuntos10bp = document.getElementById("puntos10bp");
+        const btnCalcular = document.getElementById("btnCalcular");
+        const divResultrepetir = document.getElementsByClassName("Resultrepetir")[0];
+        const divResultbp = document.getElementsByClassName("Resultbp")[0];
+        const divResultdia = document.getElementsByClassName("Resultdia")[0];
+
+        btnCalcular.addEventListener("click",e => {
+           
+            const puntosobtenidossuma=Number(vpuntos3bp.value)+Number(vpuntos3bp.value)+Number(vpuntos3bp.value)+Number(vpuntos10bp.value); //cancion de 3bp x 3 veces + cancion de 10 bp
+
+            const vpuntosconseguiryarestado= Number(vpuntosconseguir.value)-Number(vpuntosyaconseguidos.value);
+            const vecesrepetir=vpuntosconseguiryarestado/puntosobtenidossuma; //veces que repites la cancion
+
+            const vecesrepetir2=Math.ceil(vecesrepetir) //veces que repites un dia sin decimales, redondeado hacia arriba
+            console.log(vecesrepetir)
+            console.log(vecesrepetir2)
+            console.log(puntosobtenidossuma)
+           
+            const diamante=20;
+            const bpdiaentero=19;
+
+            //---CALCULO DE BP---
+            const cuantosbpnecesito=vecesrepetir2*bpdiaentero; //veces que repito el dia, por los bp total
+            console.log(cuantosbpnecesito);
+
+            //---CALCULO DE DIA---
+            const cuantosdia=cuantosbpnecesito*diamante;  //bp totales que necesitas por 20 dia que vale 1 bp
+
+            
+           divResultrepetir.textContent = "Number of times you have to do a day: "+vecesrepetir2+" times.";
+           divResultbp.textContent = "Total of BP: "+cuantosbpnecesito;
+           divResultdia.textContent = "Total of DIA: "+cuantosdia;
+        })
+
+    </script>
+</body>
+</html>

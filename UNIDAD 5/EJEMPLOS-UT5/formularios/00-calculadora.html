@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Soy tu Crypto BRAH-PP</h1>
+    <div class="contenedor">
+        <input type="number" id="cantidad">
+        <input type="button" value="Calcular" id="btnCalcular">
+        <select name="opt" id="conversion">
+            <option value="pst-eur">De pesetas a euros</option>
+            <option value="eur-pst">De euros a pesetas</option>
+        </select>
+        <div class="resultado"></div>
+    </div>
+
+
+    <script>
+        const inputCantidad = document.getElementById("cantidad");
+        const btnCalcular = document.getElementById("btnCalcular");
+        const divResult = document.getElementsByClassName("resultado")[0];
+        const conversion = document.getElementById("conversion");
+        
+       /* var selectedOption = conversion.options[conversion.selectedIndex].value;
+        conversion.addEventListener('change',
+            function () {
+                selectedOption = conversion.options[conversion.selectedIndex].value;
+            });
+            */
+
+
+        btnCalcular.addEventListener("click",e => {
+            if (conversion.value==="eur-pst"){
+           const resultado=inputCantidad.value*166.386;
+           var resultado2=Math.round(resultado);
+           divResult.textContent = resultado2+ " Pst."
+        }else{
+            const resultado=inputCantidad.value/166.386;
+           var resultado2=resultado.toFixed(2);
+           divResult.textContent = resultado2+ " Eur."
+        }
+        })
+
+    </script>
+
+
+</body>
+</html>

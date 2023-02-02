@@ -1,0 +1,143 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: #d5f1f8;
+}
+
+
+main {
+	max-width: 900px;
+	width: 90%;
+	margin: auto;
+	padding: 30px;
+	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+
+.formulario1 {
+	display: grid;
+	 grid-template-columns: 1fr 1fr ; 
+	gap: 20px;
+} 
+
+
+.formulario2 {
+	display: grid;
+	 grid-template-columns: 1fr 3fr 1fr ; 
+	gap: 20px;
+} 
+
+.formulario3 {
+	display: grid;
+	 grid-template-columns: 3fr 1fr 1fr ; 
+	gap: 20px;
+} 
+
+/* tamaño tipo via */
+#grupo__tipo {
+	width: 410px;
+}
+
+/* tamaño tipo poblacion */
+#grupo__poblacion {
+	width: 425px;
+}
+/* tamaño tipo contrasena */
+#grupo__contrasena {
+	width: 350px;
+	height: 50px;
+	margin-right: -200px;
+}
+
+
+/* tamaño num calle */
+#grupo__num {
+	width: 405px;
+}
+
+/* tamaño email */
+#grupo__email {
+	width: 420px;
+}
+
+
+/* tamaño cp */
+#grupo__cp {
+	width: 200px;
+	margin-left: -40px;
+}
+
+/* tamaño num tlf */
+#grupo__tlf {
+	margin-left: -10px;
+	width: 175px;
+}
+
+.formulario__titulo {
+	font-size: 40px;
+	color: rgb(4, 4, 59);
+	text-align: center;
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 500;
+	padding: 10px;
+	cursor: pointer;
+	max-width: 320px;
+}
+
+.formulario__grupo-input {
+	position: static;
+}
+ /* tamaño de los input  */
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 30px 0 10px;
+}
+
+
+ /* boton */
+.button {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0.7em 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(4, 4, 59);
+    color: #fff;
+	max-width: 140px;
+} 
+ .button__pil {
+     border-radius: 30px;
+	 text-align:center;
+}
+
+.button:hover{
+	background-color: #fff;
+    color: rgb(4, 4, 59);
+	border: rgb(4, 4, 59);
+}
+
+/* campo obligatorio */
+.small {
+	font-size: 15px;
+}
+
+strong {
+    color: red;
+}
+
+.card{
+	margin-left: -15px;
+}
