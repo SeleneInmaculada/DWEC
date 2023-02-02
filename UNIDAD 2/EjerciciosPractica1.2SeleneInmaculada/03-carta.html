@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p class="carta">
+    <script>
+        /*   Estimado NOMBRE,
+
+    Bienvenido al curso de CURSO que se celebrará en la localidad de LOCALIDAD 
+    entre las fechas FECHA_INICIO y
+    FECHA_FIN. Espero que el curso se desarrolle según sus expectativas. 
+    Estaremos encantados de atenderle
+
+    Atentamente,
+    La dirección. */
+
+
+        //--DECLARACION DE VARIABLES--
+        var nombre = "Enrique";
+        var curso="Jardinería y Zonas Verdes"
+        var fechainicio = "08/09/2023";
+        var fechafin = "08/06/2024";
+        var localidad = "Toledo"
+
+        //USAR VARIABLES DECLARADAS--
+
+        /*usamos `` para meter el texto e insertar nuestras variables con ${nombrevariable} */
+        var texto = `Estimado ${nombre},  
+            Bienvenido al curso de ${curso} que se celebrará en la localidad de ${localidad}
+            entre las fechas ${fechainicio} y
+            ${fechafin}. Espero que el curso se desarrolle según sus expectativas. 
+            Estaremos encantados de atenderle
+
+            Atentamente,
+            La dirección.`
+
+        console.log(texto);  //saco el texto por consola
+        document.querySelector('.carta').innerHTML = texto; 
+        //cambio el parrafo de p por el del var=texto
+    </script>
+
+</body>
+
+</html>

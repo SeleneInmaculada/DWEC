@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        
+        var numero = prompt('Dime un número del 1 al 10'); //pedimos numero por pantalla
+             
+             if(numero<=0){  //SI EL NUMERO ES MENOR O MAYOR A 0
+                console.warn("El número es menor que 0");
+             }else if(numero>10){
+                console.warn("El número es mayor que 10");
+
+             }else{ //Si no se da ninguno de los casos de arriba, entonces si hace la tabla
+
+                //-- FUNCION PARA MULTIPLICAR--
+
+        function escribirTablaMultiplicar(numero) { 
+        //declaramos la funcion y le pasamos la variable de el numero introducido
+
+            //cabecera con h3 mostrando la tabla del numero
+            document.write("<h3>Tabla de multiplicar del " + numero + "</h3>");
+
+            document.write("<ul>");  //abrimos la etiqueta ul para la lista
+
+            for (i = 0; i <= 10; i++) { //desde el 0 al 10
+                document.write("<li>"); //abrimos la etiqueta li
+                document.write(numero + "x " + i + "= " + numero * i);
+                //escribir "numero x (i hasta 10) = resultado
+                document.write("</li>"); //cerramos la etiqueta li
+            }
+            document.write("</ul>"); //cerramos la etiqueta ul
+        }
+        escribirTablaMultiplicar(numero); //llamamos a la funcion
+             }
+ 
+    </script>
+</body>
+
+</html>

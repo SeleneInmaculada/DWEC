@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //SACAR PROPIEDAD Y OBJETO DE LA PROPIEDAD
+        const object = {
+            a: 1,
+            b: 2,
+            c: 3
+        };
+
+        for (const property in object) {
+            window.alert(`${property}: ${object[property]}`);
+        }
+
+        // expected output:
+        // "a: 1"
+        // "b: 2"
+        // "c: 3"
+
+
+        //ACCEDER A UN OBJETO DE UNA PROPIEDAD CONCRETA
+        const obj = {
+            a: 1,
+            b: 2,
+            c: 3
+        };
+
+        for (const prop in obj) {
+            console.log(`obj.${prop} = ${obj[prop]}`);
+        }
+
+        // Output:
+        // "obj.a = 1"
+        // "obj.b = 2"
+        // "obj.c = 3"
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+    </script>
+
+</body>
+
+</html>
