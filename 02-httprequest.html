@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax con XMLHttpRequest</title>
+  <link rel="stylesheet" href="01-estilo.css">
+</head>
+
+<body>
+
+  <div class="contenedor">
+    <h1>Ajax con XMLHttpRequest</h1>
+    <div class="contenido">
+
+    </div>
+    <button id="btn">Acceder al servidor</button>
+
+  </div>
+
+
+  <script>
+    const imgURL = "https://media.gettyimages.com/vectors/programming-projection-vector-id483586453?s=2048x2048"
+    const contenido = document.querySelector(".contenido");
+    const btn = document.getElementById("btn");
+
+    //Creamos un objeto xhr
+    const xhr = new XMLHttpRequest();
+
+    //Evento load del XHR
+    xhr.addEventListener("load", e => {
+      console.log (e.target.status);
+      console.log (e.target.statusText);
+      if (e.target.status === 200) {
+        contenido.classList.add("success")
+        console.log(e.target.response);
+        let objeto = e.target.response
+        contenido.textContent = `Buenos días ${objeto.nombre}!!. Los que van a morir te saludan`
+      } else {
+        contenido.classList.add("error")
+        contenido.textContent = e.target.statusText
+      }
+    })
+
+    xhr.addEventListener("readystatechange",e =>{
+      switch (e.target.readyState){
+        case XMLHttpRequest.OPENED:
+          console.log("OPENED");
+        break;
+        case XMLHttpRequest.HEADERS_RECEIVED:
+        console.log("HEADERS");
+        break;
+        case XMLHttpRequest.LOADING:
+        console.log("LOADING");
+        break;
+        case XMLHttpRequest.DONE:
+        console.log("DONE");
+        break;
+      }
+    })
+
+    //INIT
+    btn.addEventListener("click", e=>{
+       xhr.open("GET", "./user.json");//VERDE
+    //xhr.open("GET", "./user.jso");  ROJO
+    //Formato en el que queremos la respuesta
+    xhr.responseType="json";
+    //SEND
+    xhr.send();
+    })
+   
+
+    //asignar evento a botón
+
+
+
+  </script>
+
+</body>
+
+</html>
