@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--CARTA DE BOOSTRAP-->
+    <h1 align ="center"><u>VENTA DE COCHES</u></h1><br>
+       <div class="row"></div>
+        
+   
+
+    <!----- EJERCICIO 3 Y 4 ----->
+    <script>
+        function coche(marca, modelo, precio, anomatriculacion, foto) { //funcion constructora
+            this.marca = marca;
+            this.modelo = modelo;
+            this.precio = precio;
+            this.anomatriculacion = anomatriculacion;
+            this.foto = foto;
+
+        }
+        var arraycoches = new Array(); //array donde guardar los coches
+
+
+        //-----NOTA: NO SE AUN COMO AÑADIR LAS IMAGENES-----
+        var c1 = new coche('Alfa Romeo', 'Tonale', 14000, 2016, "img/romeotonale.png") //declaracion de cinco coches
+        var c2 = new coche('Dacia', 'Duster', 33000, 2014, "img/duster.png")
+        var c3 = new coche('Audi', 'TT', 49000, 2008, "img/audi.png")
+        var c4 = new coche('CUPRA', 'Ateca', 51000, 2019, "img/cupra.png")
+        var c5 = new coche('Ford', 'Puma', 23000, 2022, "img/puma.png")
+
+        arraycoches.push(c1, c2, c3, c4, c5); //metemos los coches en el array
+
+        arraycoches.forEach((coche, indice) => { //recorremos las propiedades de cada coche en el array
+            //y lo mostramos por consola
+            console.log(`---- COCHE ${indice} -----`);
+            for (prop in coche) {
+                console.log(`${prop}: ${coche[prop]}`);
+            }
+        })
+
+
+        arraycoches.forEach((coche, indice) => {
+            var divnuevocoche =
+                `<div class="card" style="width: 18rem;">
+        <!--PANEL DE CARTA-->
+        <img class="card-img-top" src="${coche.foto}" alt="Card image cap">
+        <!--IMAGEN DE LA CARTA-->
+        <div class="card-body">
+            <h5 class="card-title">${coche.marca}</h5>
+            <p class="card-text"><b>Modelo: </b>${coche.modelo}</p>
+            <p class="card-text"><b>Precio: </b>${coche.precio} €</p>
+            <p class="card-text"><b>Año de matriculación: </b>${coche.anomatriculacion}</p>
+        </div>
+    </div>`
+
+            var divcoches = document.querySelector(".row");
+            divcoches.innerHTML += divnuevocoche;
+        })
+    </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

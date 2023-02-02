@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<!--Div donde sacare el mensaje en pantalla-->
+    <div class="mostrar"></div>
+    <div class="loteria alert-primary" role="alert"></div>
+    </div>
+    
+    <script type="text/javascript">
+
+        //-----EJERCICIO 1 y 2-------//
+        
+        var numero = prompt("Dime un numero maximo:"); //aviso del numero pedido por pantalla
+        var loteria = new Array();
+        var numeroAleatorio = () => { //declaracion de la funcion 
+            if (numero >= 0 && numero <=
+                99999) { //si el numero es mayor que 0 ejecutamos el calculo del numero aleatorio
+                for (var i = 1; i <= 10; i++) { //generamos diez numeros
+                    var numerorandom = Math.round((Math.random() * numero));
+                    //redondeamos el numero sin decimales y calculamos un aleatorio
+                    loteria.push(numerorandom); //lo metemos en el array
+
+                }
+                document.querySelector(".mostrar").innerHTML = `Tu numero máximo es el ${numero}
+         y el numero aleatorio el: ${numerorandom}`;
+
+                for (var j = 0; j <= loteria.length; j++) { //sacamos los diez numeros por pantalla
+                    document.querySelector(".loteria").innerHTML = `Tus numeros para la loteria son: ${loteria}`;
+                }
+
+            } else { //si en cambio el numero es menor que 0 mayor a 99999 o un caracter alfabetico
+                document.querySelector(".mostrar").innerHTML =
+                    `Tu numero elegido es menor que 0, mayor que 99999 o es un caracter no numerico`;
+            }
+
+        } //llamamos a la funcion
+        numeroAleatorio();
+    </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
