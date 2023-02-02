@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Hola <span id="span-nombre">usuario</span></h2>
+    <h2>Tu color favorito es el <span id="span-color">color</span></h2>
+    <form id="datos" action="#">
+      <input type="text" id="nombre" placeholder="Escribe tu nombre">
+      <select id="color" name="select" placeholder="Selecciona tu color favorito">
+        <option value="red">Rojo</option>
+        <option value="yellow">Amarillo</option>
+        <option value="pink">Rosa</option>
+        <option value="cyan">Cian</option>
+      </select>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+      const form = document.getElementById("datos")
+      const selectColor = document.getElementById("color");
+      const inputNombre = document.getElementById("nombre");
+      const container = document.querySelector(".container");
+      const spanColor = document.getElementById("span-color");
+      const spanNombre = document.getElementById("span-nombre");
+
+
+      ////////////////////
+
+      try {
+          valor_nombre = localStorage.getItem("nombre");
+          valor_color = localStorage.getItem("color");
+          container.style.background = valor_color;
+          spanColor.textContent = valor_color;
+          spanNombre.textContent = valor_nombre;
+        } catch (error) {
+          localStorage.setItem("color")
+          localStorage.setItem("nombre")
+        }
+
+      document.addEventListener("submit", function () {
+        const inputNombrespm = document.getElementById("nombre").value;
+        localStorage.setItem("nombre",inputNombrespm,7);
+        const selectColor = document.getElementById("color");
+        var colorspm = selectColor.options[selectColor.selectedIndex].value;
+        localStorage.setItem("color",colorspm,7)
+        
+
+      })
+
+    })
+  </script>
+</body>
+
+</html>

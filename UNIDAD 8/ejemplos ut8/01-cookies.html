@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Hola <span id="span-nombre">usuario</span></h2>
+    <h2>Tu color favorito es el <span id="span-color">color</span></h2>
+    <form id="datos" action="#">
+      <input type="text" id="nombre" placeholder="Escribe tu nombre">
+      <select id="color" name="select" placeholder="Selecciona tu color favorito">
+        <option value="red">Rojo</option>
+        <option value="yellow">Amarillo</option>
+        <option value="pink">Rosa</option>
+        <option value="cyan">Cian</option>
+      </select>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+      const form = document.getElementById("datos")
+      const selectColor = document.getElementById("color");
+      const inputNombre = document.getElementById("nombre");
+      const container = document.querySelector(".container");
+      const spanColor = document.getElementById("span-color");
+      const spanNombre = document.getElementById("span-nombre");
+
+
+
+
+      //esta función sencilla crea una cookie de sesión
+      function guardarCookie(nombre, valor) {
+        document.cookie = nombre + "=" + valor;
+
+      }
+
+      function crearCookie(nombre, valorCookie, dias) {
+        let ruta = "/";
+        let nuevaCookie
+        if (dias) {
+          // el argumento dias es opcional
+          // si no especificamos la data cuando expira, se considera que la cookie dura solo una sesion y es destruido enseguida que la sesión acaba.
+          let data = new Date();
+          // establece la data cuando la cookie expira en milisegundos
+          data.setTime(data.getTime() + dias * 24 * 60 * 60 * 1000);
+          //El método toUTCString() convierte la data en una cadena de texto (string), utilizando la zona horaria UTC (Coordinated Universal Time).
+          let expira = data.toUTCString();
+          // "/" representa el directorio raíz. O sea: la cookie es accesible en todo el dominio web si var ruta = "/subdirectorio" la cookie será accesible solo en este subdirectorio. 
+          nuevaCookie = nombre + "=" + valorCookie + "; expires=" + expira + "; path=" + ruta;
+        } else {
+          nuevaCookie = nombre + "=" + valorCookie + "; path=" + ruta
+        }
+        document.cookie = nuevaCookie;
+      }
+
+      function leerCookie(nombre) {
+        const lista = document.cookie.split(";");
+        for (i in lista) {
+          let busca = lista[i].search(nombre);
+          if (busca > -1) {
+            micookie = lista[i]
+          }
+        }
+        let igual = micookie.indexOf("=");
+        let valor = micookie.substring(igual + 1);
+        return valor;
+      }
+
+      function borrarCookie(nombre) {
+        crearCookie(nombre, "", -1);
+      }
+      ////////////////////
+
+      console.log(document.cookie)
+
+      //document.cookie= "color=pink";
+
+      try {
+          valor_nombre = leerCookie("nombre");
+          valor_color = leerCookie("color");
+          container.style.background = valor_color;
+          spanColor.textContent = valor_color;
+          spanNombre.textContent = valor_nombre;
+        } catch (error) {
+          crearCookie("color")
+          crearCookie("nombre")
+        }
+
+      document.addEventListener("submit", function () {
+        const inputNombrespm = document.getElementById("nombre").value;
+        crearCookie("nombre",inputNombrespm,7);
+        const selectColor = document.getElementById("color");
+        var colorspm = selectColor.options[selectColor.selectedIndex].value;
+        crearCookie("color",colorspm,7)
+        
+
+      })
+
+    })
+  </script>
+</body>
+
+</html>
